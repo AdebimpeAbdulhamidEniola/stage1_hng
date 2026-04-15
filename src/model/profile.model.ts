@@ -1,5 +1,5 @@
 // src/model/profile.model.ts
-import { prisma } from "../lib/prisma.js";
+import { prisma } from "../lib/prisma";
 
 
 // find profile by name — used for idempotency check

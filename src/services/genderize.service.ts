@@ -1,5 +1,5 @@
 import axios from "axios"
-import { AppError } from "../utils/apperror.utils.js"
+import { AppError } from "../utils/apperror.utils"
 
 interface GenderizeResponse {
     count: number,
