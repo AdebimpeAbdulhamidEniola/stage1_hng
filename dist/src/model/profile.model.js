@@ -1,24 +1,30 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.deleteProfileById = exports.findAllProfiles = exports.createProfile = exports.findProfileById = exports.findProfileByName = void 0;
 // src/model/profile.model.ts
-import { prisma } from "../lib/prisma";
+const prisma_1 = require("../lib/prisma");
 // find profile by name — used for idempotency check
-export const findProfileByName = async (name) => {
-    return await prisma.profile.findUnique({
+const findProfileByName = async (name) => {
+    return await prisma_1.prisma.profile.findUnique({
         where: { name },
     });
 };
+exports.findProfileByName = findProfileByName;
 // find profile by id — used for GET /api/profiles/:id
-export const findProfileById = async (id) => {
-    return await prisma.profile.findUnique({
+const findProfileById = async (id) => {
+    return await prisma_1.prisma.profile.findUnique({
         where: { id },
     });
 };
+exports.findProfileById = findProfileById;
 // create a new profile — used for POST /api/profiles
-export const createProfile = async (data) => {
-    return await prisma.profile.create({ data });
+const createProfile = async (data) => {
+    return await prisma_1.prisma.profile.create({ data });
 };
+exports.createProfile = createProfile;
 // find all profiles with optional filters — used for GET /api/profiles
-export const findAllProfiles = async (filters) => {
-    return await prisma.profile.findMany({
+const findAllProfiles = async (filters) => {
+    return await prisma_1.prisma.profile.findMany({
         where: {
             ...(filters.gender && {
                 gender: { equals: filters.gender, mode: "insensitive" },
@@ -40,9 +46,11 @@ export const findAllProfiles = async (filters) => {
         }
     });
 };
+exports.findAllProfiles = findAllProfiles;
 // delete profile by id — used for DELETE /api/profiles/:id
-export const deleteProfileById = async (id) => {
-    return await prisma.profile.delete({
+const deleteProfileById = async (id) => {
+    return await prisma_1.prisma.profile.delete({
         where: { id },
     });
 };
+exports.deleteProfileById = deleteProfileById;

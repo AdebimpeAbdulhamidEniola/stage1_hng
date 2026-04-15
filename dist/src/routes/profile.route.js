@@ -1,8 +1,10 @@
-import { Router } from "express";
-import { createUserProfile, getProfileById, getAllProfiles, deleteProfile, } from "../controller/profile.controller";
-const router = Router();
-router.post("/", createUserProfile);
-router.get("/", getAllProfiles);
-router.get("/:id", getProfileById);
-router.delete("/:id", deleteProfile);
-export default router;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const profile_controller_1 = require("../controller/profile.controller");
+const router = (0, express_1.Router)();
+router.post("/", profile_controller_1.createUserProfile);
+router.get("/", profile_controller_1.getAllProfiles);
+router.get("/:id", profile_controller_1.getProfileById);
+router.delete("/:id", profile_controller_1.deleteProfile);
+exports.default = router;
