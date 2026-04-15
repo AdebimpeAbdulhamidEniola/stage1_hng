@@ -9,7 +9,7 @@ interface AgifyResponse {
 
 export const getAgeData = async (name: string) => {
   const { data } = await axios.get<AgifyResponse>(
-    ` https://api.agify.io?name=${name}`,
+    `https://api.agify.io?name=${name}`,
   );
 
   //age group based classification

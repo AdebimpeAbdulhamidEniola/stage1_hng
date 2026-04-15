@@ -15,7 +15,7 @@ export const getNationData = async (name: string) => {
     `https://api.nationalize.io?name=${name}`,
   );
 
-  if(!data || !data.country) {
+  if(!data || !data.country || data.country.length === 0) {
      throw new AppError("Nationalize returned an invalid response", 502);
   }
 

@@ -10,7 +10,7 @@ interface GenderizeResponse {
 
 export const getGenderData = async(name: string) => {
     const {data} = await axios.get<GenderizeResponse>(
-        ` https://api.genderize.io?name=${name}`
+        `https://api.genderize.io?name=${name}`
     )
 
     // edge case check

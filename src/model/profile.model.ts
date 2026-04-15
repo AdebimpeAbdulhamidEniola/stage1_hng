@@ -49,6 +49,14 @@ export const findAllProfiles = async (filters: {
         age_group: { equals: filters.age_group, mode: "insensitive" },
       }),
     },
+    select: {
+      id: true,
+      name: true,
+      gender: true,
+      age: true,
+      age_group: true,
+      country_id: true
+    }
   });
 };
 
