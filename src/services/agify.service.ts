@@ -1,4 +1,5 @@
 import axios from "axios";
+import { AppError } from "@/utils/apperror.utils";
 
 interface AgifyResponse {
   count: number;
@@ -13,7 +14,7 @@ export const getAgeData = async (name: string) => {
 
   //age group based classification
   if (!data.age) {
-    throw new Error("Agify returned an invalid response");
+    throw new AppError("Agify returned an invalid response", 502);
   }
   const classifyAgeGroup = (age: number): string => {
     if (age <= 12) return "child";

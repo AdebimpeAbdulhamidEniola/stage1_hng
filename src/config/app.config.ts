@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import { notFoundHandler } from "../utils/notfound.utils";
 import { errorHandler } from "../utils/errorhandler.utils";
+import ProfileRouter from "../routes/profile.route"
 
 dotenv.config();
 
@@ -24,6 +25,8 @@ export const createApp = (): Application => {
 
 
   //Routes
+
+  app.use("/api/profiles", ProfileRouter)
  
 
 

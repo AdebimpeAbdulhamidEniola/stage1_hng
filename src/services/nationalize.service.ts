@@ -1,4 +1,5 @@
 import axios from "axios";
+import { AppError } from "@/utils/apperror.utils";
 
 interface NationalizeResponse {
   count: number;
@@ -15,7 +16,7 @@ export const getNationData = async (name: string) => {
   );
 
   if(!data || !data.country) {
-     throw new Error("Nationalize returned an invalid response");
+     throw new AppError("Nationalize returned an invalid response", 502);
   }
 
   //pick the country with the highest probability

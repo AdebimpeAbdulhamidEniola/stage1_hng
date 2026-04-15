@@ -1,4 +1,5 @@
 import axios from "axios"
+import { AppError } from "@/utils/apperror.utils"
 
 interface GenderizeResponse {
     count: number,
@@ -12,9 +13,9 @@ export const getGenderData = async(name: string) => {
         ` https://api.genderize.io?name=${name}`
     )
 
-     // edge case check
+    // edge case check
   if (!data.gender || data.count === 0) {
-    throw new Error("Genderize returned an invalid response");
+   throw new AppError("Genderize returned an invalid response", 502);
   }
 
   return {
