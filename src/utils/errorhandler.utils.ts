@@ -1,7 +1,7 @@
 // src/utils/errorhandler.utils.ts
 import { Request, Response, NextFunction } from "express";
-import { sendError } from "./response.utils";
-import { AppError } from "./apperror.utils";
+import { sendError } from "./response.utils.js";
+import { AppError } from "./apperror.utils.js";
 
 export const errorHandler = (err: unknown, req: Request, res: Response, next: NextFunction): void => {
 
