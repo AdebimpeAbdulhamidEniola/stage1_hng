@@ -1,4 +1,4 @@
-import { createApp } from "./config/app.config";
+import { createApp } from "./config/app.config.js";
 import dotenv from "dotenv";
 
 dotenv.config();
