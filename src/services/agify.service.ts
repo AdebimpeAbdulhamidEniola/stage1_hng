@@ -1,5 +1,5 @@
 import axios from "axios";
-import { AppError } from "@/utils/apperror.utils";
+import { AppError } from "../utils/apperror.utils";
 
 interface AgifyResponse {
   count: number;
